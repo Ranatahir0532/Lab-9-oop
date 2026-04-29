@@ -17,7 +17,7 @@ protected:
   	deposit(int acc,double am,double da):transaction(acc,am),Deposit_amount(da){
   		
 	  }	
-	void process_transaction() /*override*/{
+	void process_transaction() override{
 	amount+=Deposit_amount;
 	cout<<"account number: "<<account_number<<endl;
 	cout<<"Amount:"<<Deposit_amount<<" deposited sucessfully"<<endl;
@@ -31,7 +31,7 @@ protected:
 		Withdrawal(int acc,double am,double wa):transaction(acc,am),withdrawal_amount(wa){
   		
 	  }	
-	void process_transaction() /*override*/{
+	void process_transaction() override{
 	if(withdrawal_amount>amount){
 		cout<<"insuficient amount to withdrawal....."<<endl;
 		return;
@@ -52,7 +52,7 @@ protected:
     Transfer(int acc,double am,int tan,double ta):transaction(acc,am),transfer_accnum(tan){
   	transfer_amount=ta;
 	  }	
-	void process_transaction() /*override*/{
+	void process_transaction() override{
 		if(transfer_amount>amount){
 		cout<<"insuficient amount to transfer....."<<endl;
 		return;
